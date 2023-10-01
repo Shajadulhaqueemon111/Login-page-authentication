@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from 'firebase/auth';
 import React, { useRef, useState } from 'react';
 import auth from '../Firebase/Firebase.config';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -40,6 +40,12 @@ const Register = () => {
             setSuccess('Successfully login')
 
             sendEmailVerification(result.user)
+
+            updateProfile(result.user),{
+          displayName:name,
+          photoUrl: ""
+
+            }
 
             .then(()=>{
                 console.log('please cheack your email veryfied your account')
