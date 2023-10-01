@@ -43,7 +43,7 @@ const Register = () => {
 
             updateProfile(result.user),{
           displayName:name,
-          photoUrl: ""
+          
 
             }
 
